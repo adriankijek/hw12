@@ -18,7 +18,7 @@ public class PasswordValidator {
             if (Character.isLowerCase(c)) hasLower = true;
             else if (Character.isUpperCase(c)) hasUpper = true;
             else if (Character.isDigit(c)) hasDigit = true;
-            else if (specialChars.contains(String.valueOf(c))) hasSpecial = true;
+            else if (specialChars.indexOf(c) >= 0) hasSpecial = true;
         }
 
         int count = 0;
@@ -32,7 +32,7 @@ public class PasswordValidator {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter password to validate: ");
+        System.out.print("Enter a password to validate: ");
         String input = scanner.nextLine();
         scanner.close();
 
@@ -43,3 +43,4 @@ public class PasswordValidator {
         }
     }
 }
+
